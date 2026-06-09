@@ -1,0 +1,3 @@
+#!/bin/bash
+python3 ZMassVector.py
+explorer.exe hist2.png
