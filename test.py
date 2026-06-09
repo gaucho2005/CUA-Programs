@@ -1,4 +1,18 @@
-from Efficiency import calcEfficiency
-TagTag=[1,3,2,5,4,3,1,1,2,46,6,6,6,43,12,414,35,52,1,43,5,6,3,2,5,3,1,4,6,3,1,4,5,3]
-TagProbe=[1,1,5,3,2]
-TagFail=[5,3,2,56,346,73,43,53,2,532,2243,2,523,532,423,1,23,53,5]
+import numpy as np
+import plotly.graph_objects as go
+import subprocess
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+z= np.linspace(-5,5,100)
+
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+fig = go.Figure(
+    data=[go.Surface(x=X, y=Y, z=Z)]
+)
+
+fig.show()
+fig.write_html("scan.html")
+subprocess.run("explorer.exe scan.html", shell=True)

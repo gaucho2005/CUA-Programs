@@ -16,11 +16,13 @@ import pyarrow.parquet as pq
 import polars as pl
 
 def calcEfficiency(TagTagList,TagProbeList,TagFailList):
-    TT=len(TagTagList)
-    TP=len(TagProbeList) #taking number of each pair that exists
-    TF=len(TagFailList)
+    if not isinstance(TagTagList, (int, float)):
+        TT=len(TagTagList)
+        TP=len(TagProbeList) #taking number of each pair that exists
+        TF=len(TagFailList)
+    else:
+        TT=TagTagList
+        TP=TagProbeList
+        TF=TagFailList
     Efficiency=((2*TT)+TP)/((2*TT)+TP+TF)
     return Efficiency
-
-
-    
