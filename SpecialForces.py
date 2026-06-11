@@ -9,6 +9,7 @@ from pathlib import Path
 from tqdm import tqdm
 import pyarrow.parquet as pq
 import polars as pl
+import random
 
 cheatcolumnnames=['tag_seediEtaOriX', 'tag_cutBased', 'tag_electronVeto', 'tag_hasConversionTracks', 'tag_isScEtaEB', 
     'tag_isScEtaEE', 'tag_mvaID_WP80', 'tag_mvaID_WP90', 'tag_pixelSeed', 'tag_seedGain', 'tag_electronIdx', 'tag_jetIdx', 
@@ -27,7 +28,7 @@ cheatcolumnnames=['tag_seediEtaOriX', 'tag_cutBased', 'tag_electronVeto', 'tag_h
     'probe_sipip', 'probe_superclusterEta', 'probe_trkSumPtHollowConeDR03', 'probe_trkSumPtSolidConeDR04', 'probe_x_calo', 
     'probe_y_calo', 'probe_z_calo', 'probe_electronIdxG', 'probe_jetIdxG', 'probe_ScEta', 'probe_pt_raw', 'probe_rho_smear', 
     'probe_pt', 'sigma_m_over_m', 'sigma_m_over_m_Smeared', 'mass', 'nPV', 'fixedGridRhoAll']
-cleancolorlist =['aqua', 'aquamarine', 'black', 'blue', 'blueviolet','brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue',
+cleancolorlist =['aqua', 'aquamarine', 'blue', 'blueviolet','brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue',
     'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray','darkgreen', 'darkgrey', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange',
     'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray',
     'dimgrey', 'dodgerblue', 'firebrick', 'forestgreen', 'fuchsia', 'gold', 'goldenrod', 'gray', 'green', 'greenyellow', 'grey', 'hotpink', 'indianred', 'indigo', 'khaki',
@@ -36,7 +37,8 @@ cleancolorlist =['aqua', 'aquamarine', 'black', 'blue', 'blueviolet','brown', 'b
     'midnightblue', 'navy', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'peachpuff',
     'peru', 'pink', 'plum', 'powderblue', 'purple', 'rebeccapurple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'sienna', 'silver',
     'skyblue', 'slateblue', 'slategray', 'slategrey', 'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'yellow', 'yellowgreen']
-
+def randColor():
+    return random.choice(cleancolorlist)
 def get_column_arrays(target_col, file_path): #Fast. Grabs the data from a column in a file at one file path. You can easily repeat this and loop to get a dictionary of columns and their data
     
     
