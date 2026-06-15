@@ -28,7 +28,7 @@ cheatcolumnnames=['tag_seediEtaOriX', 'tag_cutBased', 'tag_electronVeto', 'tag_h
     'probe_sipip', 'probe_superclusterEta', 'probe_trkSumPtHollowConeDR03', 'probe_trkSumPtSolidConeDR04', 'probe_x_calo', 
     'probe_y_calo', 'probe_z_calo', 'probe_electronIdxG', 'probe_jetIdxG', 'probe_ScEta', 'probe_pt_raw', 'probe_rho_smear', 
     'probe_pt', 'sigma_m_over_m', 'sigma_m_over_m_Smeared', 'mass', 'nPV', 'fixedGridRhoAll']
-cleancolorlist =['aqua', 'aquamarine', 'blue', 'blueviolet','brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue',
+cleancolorlist =['aqua', 'aquamarine', 'blue', 'blueviolet', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue',
     'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray','darkgreen', 'darkgrey', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange',
     'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkslategrey', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray',
     'dimgrey', 'dodgerblue', 'firebrick', 'forestgreen', 'fuchsia', 'gold', 'goldenrod', 'gray', 'green', 'greenyellow', 'grey', 'hotpink', 'indianred', 'indigo', 'khaki',
