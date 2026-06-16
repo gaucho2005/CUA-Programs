@@ -158,7 +158,7 @@ def make3DHist(): #makes 3d histograms with 2 bin axes
     TT,TP,TF=grouper(sim_data)
     sim_x_centers,sim_y_centers,sim_efficiency=gen3dhistdata(TT,TP,TF)
     
-    Factor=real_efficiency/sim_efficiency
+    #Factor=real_efficiency/sim_efficiency
 
     # 4. Create the surface plot 
     fig = go.Figure(data=[go.Surface(z=Factor, x=sim_x_centers, y=sim_y_centers,showscale=True,contours={"x": {"show": True, "size": 1},"y": {"show": True, "size": 1},"z": {"show": True}})])
@@ -198,7 +198,6 @@ def main():
     for name,data in paths.items():
         makeHist(name,data,section,axis,100)
 main()   
-
 
 
 

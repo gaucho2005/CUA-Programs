@@ -142,6 +142,7 @@ def plot_fit(bin_centers, counts, popt):
     plt.text(0.05, 0.80, f"Fitted Mean: {popt[4]:.2f} GeV\nFitted Sigma: {popt[5]:.2f} GeV",transform=plt.gca().transAxes, fontsize=11, bbox=dict(facecolor='white', alpha=0.8))
     plt.legend(loc='upper right')
     plt.grid(True, alpha=0.2)
+    plt.ylim(0,0.1)
     plt.tight_layout()
     title="Freaky Ahh Hist"
     out_folder = Path("/home/ciroj/CUA/testing/Charts")
@@ -171,9 +172,9 @@ def main(dataframe):
     number_of_signal_events = raw_integral / bin_width
     if number_of_signal_events>len(df):
         number_of_signal_events=len(df)
-    print(f"AAAAAAAAAAAAAA {df['probe_pt']}")
+    print(f"Initial Number of Events Inputed: {len(df)}")
     print(f"Total Signal Events from Integral: {number_of_signal_events:.0f}")
-    print(f"Extracted Z Mass Mean: {popt[2]:.2f} GeV")
+    #print(f"Extracted Z Mass Mean: {popt[4]:.2f} GeV")
     print(f"REMOVED EVENTS FROM BACKGROUND: {len(df)-number_of_signal_events} ({(len(df)-number_of_signal_events)/(.01*len(df))}%)")
     #plot_fit(bin_centers, counts, popt)
     return number_of_signal_events
